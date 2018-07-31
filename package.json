@@ -1,0 +1,34 @@
+{
+  "name": "delver",
+  "version": "0.0.1",
+  "description": "delver: the sequel to learning-angular; in which we learn how to automate various build pipelines, including sourcemaps, obfuscation, and more!",
+  "main": "index.js",
+  "scripts": {
+    "test": "unittest"
+  },
+  "author": "David Mallett",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "mtgsdk": "^0.3.0",
+    "mtgsdk-ts": "^1.1.2",
+    "node-json-db": "^0.7.5",
+    "request": "^2.87.0",
+    "typescript": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.55",
+    "@babel/core": "^7.0.0-beta.55",
+    "@babel/plugin-transform-typescript": "^7.0.0-beta.55",
+    "@types/gulp": "^4.0.5",
+    "@types/lodash": "^4.14.113",
+    "@types/node": "^10.5.3",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^6.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-terser": "^1.0.1",
+    "gulp-typescript": "^5.0.0-alpha.3",
+    "pump": "^3.0.0",
+    "terser": "^3.8.1"
+  }
+}
