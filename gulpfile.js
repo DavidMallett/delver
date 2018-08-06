@@ -3,7 +3,19 @@ const pump = require("pump");
 const sourcemaps = require("gulp-sourcemaps");
 const terser = require("gulp-terser");
 const ts = require("gulp-typescript");
-const tsProject = ts.createProject("tsconfig.json");
+// const tsProject = ts.createProject("tsconfig.json");
+const es5Project = ts.createProject("tsconfig.es5.json");
+const mocha = require("gulp-mocha");
+
+let mochaOpts = {
+    colors: true,
+    reporter: "mochawesome",
+    reporterOptions: {
+        reportDir: "_dist/test-results",
+        reportFilename: "test-results"
+    },
+    require: null // "ts-node/register"
+}
 
 const terserOpts = {
     parse: {
@@ -56,15 +68,44 @@ gulp.task("default", function () {
         .js.pipe(gulp.dest("_dist"));
 });
 
-gulp.task("compress", (cb) => {
+gulp.task("compile-es5", (cb) => {
     pump([
-            tsProject.src(),
+            es5Project.src(),
+            es5Project(),
+            gulp.dest("_dist/es5")
+        ],
+        cb
+    )
+})
+
+gulp.task("compress-es5", (cb) => {
+    pump([
+            es5Project.src(),
             sourcemaps.init(),
-                tsProject(),
+                es5Project(),
                 terser(terserOpts),
             sourcemaps.write(),
-            gulp.dest("_compressed")
+            gulp.dest("_compressed/es5")
         ],
         cb
     )
 });
+
+gulp.task("test-es5", (cb) => {
+    pump([
+            gulp.src("_dist/es5/**/*.spec.js"),
+            mocha(mochaOpts)
+        ],
+        cb
+    )
+})
+
+gulp.task("test-ts", (cb) => {
+    mochaOpts.require = "ts-node/register";
+    pump([
+            gulp.src("src/**/*.spec.ts"),
+            mocha(mochaOpts)
+        ],
+        cb
+    )
+})

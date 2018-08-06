@@ -1,11 +1,11 @@
 {
-    "files": [
-        "src/main.ts",
-        "src/greet.ts"
-    ],
+    // "files": [
+    //     "src/main.ts",
+    //     "src/greet.ts"
+    // ],
     "compilerOptions": {
         "noImplicitAny": false,
         "target": "es6",
-        "outDir": "_dist"
+        "outDir": "_dist/"
     }
 }

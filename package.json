@@ -1,5 +1,6 @@
 {
   "name": "delver",
+  "repo": "https://github.com/DavidMallett/delver.git",
   "version": "0.0.1",
   "description": "delver: the sequel to learning-angular; in which we learn how to automate various build pipelines, including sourcemaps, obfuscation, and more!",
   "main": "index.js",
@@ -20,15 +21,25 @@
     "@babel/cli": "^7.0.0-beta.55",
     "@babel/core": "^7.0.0-beta.55",
     "@babel/plugin-transform-typescript": "^7.0.0-beta.55",
+    "@types/chai": "^4.1.4",
     "@types/gulp": "^4.0.5",
+    "@types/gulp-mocha": "0.0.32",
     "@types/lodash": "^4.14.113",
+    "@types/mocha": "^5.2.5",
+    "@types/moment": "2.13.0",
     "@types/node": "^10.5.3",
+    "chai": "^4.1.2",
     "gulp": "^3.9.1",
     "gulp-mocha": "^6.0.0",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-terser": "^1.0.1",
     "gulp-typescript": "^5.0.0-alpha.3",
+    "mocha": "^5.2.0",
+    "mocha-typescript": "^1.1.17",
+    "mochawesome": "^3.0.3",
+    "moment": "2.22.2",
     "pump": "^3.0.0",
-    "terser": "^3.8.1"
+    "terser": "^3.8.1",
+    "ts-node": "^7.0.0"
   }
 }
