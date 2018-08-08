@@ -25,6 +25,8 @@
     "proseWrap": "always"
   },
   "scripts": {
+    "lint": "node ./node_modules/eslint/bin/eslint.js \"src/**/*.ts\"",
+    "prettify": "node ./node_modules/prettier/bin-prettier.js --config package.json \"src/**/*.ts\"",
     "test": "unittest && ava"
   },
   "author": "David Mallett",
