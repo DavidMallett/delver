@@ -1,11 +1,27 @@
 {
-    // "files": [
-    //     "src/main.ts",
-    //     "src/greet.ts"
-    // ],
+    "include": [
+        "src/ts/**/*.ts",
+        "src/test/**/*.spec.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "_dist",
+        "_compressed",
+        "_cache"
+    ],
     "compilerOptions": {
         "noImplicitAny": false,
         "target": "es6",
-        "outDir": "_dist/"
+        "lib": ["es5"],
+        "outDir": "_dist/es5",
+        "rootDir": "./src",
+        "module": "commonjs",
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "inlineSources": true,
+        "typeRoots": ["node_modules/@types"],
+        "listEmittedFiles": true,
+        "noEmitOnError": true
     }
 }

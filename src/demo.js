@@ -7,7 +7,7 @@ var DB_NAME= "cardDatabase";
 
 var db = new JsonDb(DB_NAME, true);
 
-/**
+/**e
  * The goal of the demo is to implement the following:
  * 1. Wrapper around the mtgsdk package that overrides card.find,
  *  first checking if the card is saved in our local DB.
