@@ -6,9 +6,14 @@
   "main": "index.js",
   "ava": {},
   "eslintConfig": {
-    "extends": ["plugin:prettier/recommended"],
+    "extends": [
+      "plugin:prettier/recommended"
+    ],
     "parser": "typescript-eslint-parser",
-    "plugins": ["prettier", "typescript"]
+    "plugins": [
+      "prettier",
+      "typescript"
+    ]
   },
   "prettier": {
     "arrowParens": "always",
@@ -73,6 +78,7 @@
     "mocha-typescript": "^1.1.17",
     "mochawesome": "^3.0.3",
     "moment": "^2.22.2",
+    "nyc": "^12.0.2",
     "prettier": "1.14.0",
     "pump": "^3.0.0",
     "terser": "^3.8.1",
