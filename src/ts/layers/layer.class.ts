@@ -12,7 +12,7 @@ export class Layer {
     public sublayerLevel?: string; // "7a"-"7e"
     public cdaList: CharacteristicDefiningAbility[]; // fills up in timestamp order
     public effectList: any[];
-    public effectType: string // "Copy", "Control", "Text", "Type", "Color", "Abilities", "Power/Toughness"
+    public effectType: string; // "Copy", "Control", "Text", "Type", "Color", "Abilities", "Power/Toughness"
 
     public constructor(level: number, subLevel?: string) {
         (zero <= level && seven > level)

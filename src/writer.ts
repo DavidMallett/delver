@@ -1,6 +1,6 @@
-import * as mtg from 'mtgsdk-ts';
-import * as _ from 'lodash';
-import * as fs from 'fs';
+import * as fs from "fs";
+import * as _ from "lodash";
+import * as mtg from "mtgsdk-ts";
 // const fs = require('fs');
 // import * as fs from 'fs';
 

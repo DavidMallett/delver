@@ -9,9 +9,9 @@
 export class CharacteristicDefiningAbility {
 
     public valueBeingDefined: string; // name of the value being modified
-    public objectBeingModified: any | any[];
+    public objectBeingModified: any | any[]; // can be one object or many
     public effectType: string; // "Copy", "Control", "Text", "Type", "Color", "Abilities", "Power/Toughness"
-    public effect: Function; // could also be json?
+    public effect?: any; // could also be json?
 
     public constructor(vbd: string, obm: any | any[], et: string) {
         this.valueBeingDefined = vbd;
@@ -19,4 +19,3 @@ export class CharacteristicDefiningAbility {
         this.effectType = et;
     }
 }
-
