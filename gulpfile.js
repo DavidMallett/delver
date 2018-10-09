@@ -1,9 +1,9 @@
 const gulp = require("gulp");
 const pump = require("pump");
 const sourcemaps = require("gulp-sourcemaps");
-const terser = require("gulp-terser");
 const ts = require("gulp-typescript");
 const tsProject = ts.createProject("tsconfig.json");
+
 // const es5Project = ts.createProject("tsconfig.es5.json");
 const mocha = require("gulp-mocha");
 const babel = require("gulp-babel");
@@ -15,7 +15,8 @@ let mochaOpts = {
     reportDir: "_dist/test-results",
     reportFilename: "test-results"
   },
-  require: "ts-node/register" // "ts-node/register"
+  timeout: 10000
+  // require: "ts-node/register" // "ts-node/register"
 };
 
 const terserOpts = {
@@ -74,6 +75,42 @@ gulp.task("compile-es5", (cb) => {
   pump([es5Project.src(), es5Project(), gulp.dest("_dist/es5")], cb);
 });
 
+gulp.task("compile", (cb) => {
+  pump([
+    gulp.src([
+      "src/ts/core/*.ts"
+    ]),
+    // tsProject.src(),
+    tsProject(),
+    gulp.dest("_dist/es6")
+  ], cb);
+});
+
+gulp.task("babel", (cb) => {
+  pump([
+    gulp.src("_dist/es6/**/*.js"),
+    babel(),
+    gulp.dest("_dist/es5")
+  ], cb);
+});
+
+gulp.task("make", gulp.series("compile", "babel"));
+
+gulp.task("mana", (cb) => {
+  console.log("testing with options: " + JSON.stringify(mochaOpts));
+  pump([
+    gulp.src("_dist/es5/mana-parser.spec.js"),
+    mocha(mochaOpts)
+    // gulp.dest("_dist/es5")
+  ], cb);
+});
+
+// gulp.task("babel", (cb) => {
+//   pump([
+
+//   ])
+// })
+
 gulp.task("compress-es5", (cb) => {
   pump(
     [
@@ -88,7 +125,7 @@ gulp.task("compress-es5", (cb) => {
   );
 });
 
-gulp.task("test-es5", (cb) => {
+gulp.task("test", (cb) => {
   pump([gulp.src("_dist/es5/**/*.spec.js"), mocha(mochaOpts)], cb);
 });
 

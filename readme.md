@@ -8,3 +8,7 @@ Next: will write some dummy classes and experiment with different methods of min
 
 I heard on the radio about a science contest where high schoolers had to design a space station for 10,000 humans. So I thought, why not try to create a simulation? And why not learn how to use Ava / Babel / ESnext while I'm at it?
 
+
+## Goldfish
+
+How hard can it be to make an app that takes different Burn decks (60-card maindeck only in MVP) and calculates their average turn win / determine which one has percentage points over the others? Let's find out!

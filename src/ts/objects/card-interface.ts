@@ -54,4 +54,5 @@ export interface Type {
     supertypes?: string[];
     types?: string[];
     subtypes?: string[];
+    typeLine?: string; // concatenated types
 }

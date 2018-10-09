@@ -1,19 +1,24 @@
 {
     "include": [
-        "src/ts/**/*.ts",
-        "src/test/**/*.spec.ts"
+        "src/ts/core/mana.interface.ts",
+        "src/ts/core/mana-parser.spec.ts",
+        "src/ts/core/multi-mana-cost.ts"
     ],
     "exclude": [
         "node_modules",
         "_dist",
         "_compressed",
-        "_cache"
+        "_cache",
+        "src/ts/goldfish"
     ],
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
         "noImplicitAny": false,
-        "target": "es2017",
-        "lib": ["es5", "es6", "esnext", "es2017"],
-        "outDir": "_dist/es5",
+        "target": "es2015",
+        "lib": ["es5", "dom", "es2015", "esnext"],
+        "outDir": "_dist/es6",
         "rootDir": "./src",
         "module": "es2015",
         "moduleResolution": "node",
@@ -23,6 +28,12 @@
         "inlineSources": true,
         "typeRoots": ["node_modules/@types"],
         "listEmittedFiles": true,
-        "noEmitOnError": true
+        "noEmitOnError": true,
+        "emitDecoratorMetadata": true,
+        "traceResolution": true,
+        "listFiles": true,
+        "inlineSourceMap": true,
+        "isolatedModules": true
+        // "importHelpers": true
     }
 }

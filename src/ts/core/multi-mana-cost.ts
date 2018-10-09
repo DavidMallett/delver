@@ -1,9 +1,9 @@
-import { IManaCost, Mana } from "./mana.interfaces";
+import { IManaCost, IMultiManaCost, Mana } from "./mana.interfaces";
 
 // A class which can represent more than one way to pay a mana cost (split symbols)
-export class MultiManaCost {
+export class MultiMana implements IMultiManaCost {
 
-  
+
 
   public mainCost: Mana;
   public alternateCosts: Mana[];
@@ -14,9 +14,7 @@ export class MultiManaCost {
    */
   public constructor(primary: Mana, ...alternates: Mana[]) {
     this.mainCost = primary;
-    for (const m in alternates) {
-      this.alternateCosts.push(m);
-    }
+    this.alternateCosts = alternates || [];
   }
 
 }
