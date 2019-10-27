@@ -16,7 +16,7 @@ const test7: string = "{W/2}{W/2}{W/2}";
 describe("a suite of unit tests to ensure the Mana.parse() function works", function() {
 
   it("should parse some regular costs (single)", async function() {
-    console.log("parsing " + test0 + " ...:\n");
+    console.log("parsing " + test0 + " :\n");
     const parsed: Mana = await Mana.parse(test0);
     console.log("parsed:\n" + JSON.stringify(parsed));
     expect(parsed.colorlessCost).to.equal(1);
@@ -25,7 +25,7 @@ describe("a suite of unit tests to ensure the Mana.parse() function works", func
   });
 
   it("should parse some regular costs (double)", async function() {
-    console.log("parsing " + test1 + " ...:\n");
+    console.log("parsing " + test1 + " :\n");
     const parsed: Mana = await Mana.parse(test1);
     console.log("parsed:\n" + JSON.stringify(parsed));
     expect(parsed.whiteCost).to.equal(2);
@@ -34,7 +34,7 @@ describe("a suite of unit tests to ensure the Mana.parse() function works", func
   });
 
   it("should parse some regular costs [[Darksteel Colossus]]", async function() {
-    console.log("parsing " + test2 + " ...:\n");
+    console.log("parsing " + test2 + " :\n");
     const parsed: Mana = await Mana.parse(test2);
     console.log("parsed:\n" + JSON.stringify(parsed));
     expect(parsed.genericCost).to.equal(11);
@@ -42,7 +42,7 @@ describe("a suite of unit tests to ensure the Mana.parse() function works", func
   });
 
   // it("should parse some regular costs [[Dismember]]", async function() {
-  //   console.log("parsing " + test3 + " ...:\n");
+  //   console.log("parsing " + test3 + " :\n");
   //   const parsed: Mana = await Mana.parse(test3);
   //   console.log("parsed:\n" + JSON.stringify(parsed));
   //   expect(parsed.alternateCosts.length).to.equal(2);
@@ -51,7 +51,7 @@ describe("a suite of unit tests to ensure the Mana.parse() function works", func
   // });
 
   it("should parse some regular costs [[Kynaios and Tiru]]", async function() {
-    console.log("parsing " + test4 + " ...:\n");
+    console.log("parsing " + test4 + " :\n");
     const parsed: Mana = await Mana.parse(test4);
     console.log("parsed:\n" + JSON.stringify(parsed));
     expect(parsed.blueCost).to.equal(1);
@@ -63,7 +63,7 @@ describe("a suite of unit tests to ensure the Mana.parse() function works", func
   });
 
   it("should parse some regular costs [[Progenitus]]", async function() {
-    console.log("parsing " + test5 + " ...:\n");
+    console.log("parsing " + test5 + " :\n");
     const parsed: Mana = await Mana.parse(test5);
     console.log("parsed:\n" + JSON.stringify(parsed));
     expect(parsed.blueCost).to.equal(2);
@@ -76,7 +76,7 @@ describe("a suite of unit tests to ensure the Mana.parse() function works", func
   });
 
   // it("should parse some split costs [[alara block uncommon]]", async function() {
-  //   console.log("parsing " + test6 + " ...:\n");
+  //   console.log("parsing " + test6 + " :\n");
   //   const parsed: Mana = await Mana.parse(test6);
   //   console.log("parsed:\n" + JSON.stringify(parsed));
   //   expect(parsed.blueCost).to.equal(1);
@@ -86,7 +86,7 @@ describe("a suite of unit tests to ensure the Mana.parse() function works", func
   // });
 
   // it("should parse some split costs with different CMC [[Spectral Procession]]", async function() {
-  //   console.log("parsing " + test7 + " ...:\n");
+  //   console.log("parsing " + test7 + " :\n");
   //   const parsed: Mana = await Mana.parse(test7);
   //   console.log("parsed:\n" + JSON.stringify(parsed));
   //   expect(parsed.whiteCost).to.equal(0);

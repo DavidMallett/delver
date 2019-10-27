@@ -1,12 +1,13 @@
 import * as mtg from "mtgsdk-ts";
 import * as _ from "lodash";
 
+import { Type } from "../objects/card-interface";
 import { MVPCard } from "./index";
 import { CharacteristicDefiningAbility } from "../layers/cda.class";
 
 const SUPERTYPES: string[] = ["Legendary", "World", "Basic", "Snow"]
 const TYPES: string[] = ["Creature", "Artifact", "Enchantment", "Land", "Instant", "Sorcery", "Planeswalker", "Tribal"];
-const ATTRIBUTES: string[] = ["permanent", "token", "emblem", ]
+const ATTRIBUTES: string[] = ["permanent", "token", "emblem"];
 
 export class CreatureCard extends MVPCard {
   
@@ -14,6 +15,7 @@ export class CreatureCard extends MVPCard {
   public toughness: number;
   public cdas?: CharacteristicDefiningAbility[];
   public manaCost: string;
+  public type: Type;
 
   public constructor(name?: string, card?: mtg.Card) {
     super();

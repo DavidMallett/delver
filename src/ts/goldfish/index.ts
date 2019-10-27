@@ -7,6 +7,7 @@ import { Type } from "../objects/card-interface";
 
 // an abstract class describing the properties and methods of a Card object in MVP
 export abstract class MVPCard {
+  public id?: string;
   public name: string;
   public names?: string[]; // DFC, Aftermath, Split cards, etc
   public type: Type;
@@ -20,7 +21,7 @@ export abstract class MVPCard {
 export abstract class MVPPlayer {
   public name: string;
   public deck: Deck;
-  public opponentName: string; // string to prevent circular references
+  public opponentName?: string; // string to prevent circular references
   public life: number;
 
   // possibly move these to whatever class implements this one:
@@ -46,7 +47,7 @@ export class CardFinder {
           subtypes: card.subtypes,
           supertypes: card.supertypes,
           types: card.types,
-          typeLine: card.supertypes.join(" ") + card.types.join(" ") + card.subtypes.join(" "),
+          typeLine: card.supertypes.join(" ") + card.types.join(" ") + " - " + card.subtypes.join(" ")
         }, 
         colors: card.colors,
         text: card.originalText

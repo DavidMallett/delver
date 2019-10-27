@@ -39,4 +39,9 @@ export class Spike extends MVPPlayer {
     }
   }
 
+  public async takeTurn(): Promise<void> {
+    let landsPerTurn: number = 0;
+    
+  }
+
 }

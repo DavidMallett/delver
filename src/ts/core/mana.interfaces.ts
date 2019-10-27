@@ -1,7 +1,5 @@
 import * as _ from "lodash";
-// // import * as Promise from 
-// import "es6-promise"; // deprecated
-// ^^ fixed by upgrading VScode's node version 
+
 export const SYMBOLS: string = "WURBGC";
 export const PHYREXIAN_SYMBOLS: string[] = [ "W/P", "U/P", "B/P", "R/P", "G/P" ];
 
