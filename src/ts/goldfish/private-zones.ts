@@ -9,7 +9,7 @@ export class Graveyard extends Zone {
   // such as { cardTypes: number } for Tarmogoyf or { hasDelirium: boolean } for Grim flayer, etc
   constructor() {
     super("graveyard");
-    this.zt = ZoneType.hidden;
+    this.zt = ZoneType.public;
     this.cards = [];
   }
 }
@@ -20,7 +20,7 @@ export class Exile extends Zone {
 
   constructor() {
     super("exile");
-    this.zt = ZoneType.hidden;
+    this.zt = ZoneType.public;
   }
 }
 
